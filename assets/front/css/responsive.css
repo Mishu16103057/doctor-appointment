@@ -1,0 +1,180 @@
+/* Medium Layout: 1280px. */
+@media only screen and (min-width: 992px) and (max-width: 1200px) {
+/*  Starting of Blogs  */
+.blog-text p {height: 90px;}
+/*  Ending of Blogs  */
+
+/*  Starting of Blogs Details  */
+.post-sidebar-area li a {font-size: 14px;}
+/*  Ending of Blogs Details  */
+
+/*  Starting of footer area  */
+.single-footer-area {padding-top: 30px;}
+.footer-title {margin-bottom: 10px;}
+/*  Ending of footer area  */
+
+/*  Starting of Login area area  */ 
+.login-form {padding: 50px; padding-top: 100px;}
+/*  Ending of Login area area  */
+
+/*----------Starting of Hero area----------*/
+.hero-area h1 {font-size: 35px; margin-top: 30px;}
+/*----------Ending of Hero area----------*/
+
+/*----------Starting of About me area----------*/
+.boxed-btn {margin-top: 0;}
+.home-about-right-area h1 {font-size: 20px;}
+.home-about-right-area {padding: 40px 0;}
+/*----------Ending of About me area----------*/
+
+/*----------Starting of Special Services----------*/
+.special-service-description {margin: 0;}
+.single-special-service {padding: 5px 0; margin-bottom: 10px;}
+.special-service-icon {top: 6px;}
+/*----------Ending of Special Services----------*/
+
+
+}
+
+/* Tablet Layout: 768px. */
+@media only screen and (min-width: 768px) and (max-width: 991px) { 
+/*  Starting of footer area  */
+.footer-email-subs {margin-top: 30px;}
+.single-footer-area {padding-top: 30px;}
+.footer-title {margin-bottom: 10px;}
+.section-padding.footer-area-wrapper {padding-bottom: 30px;}
+/*  Ending of footer area  */
+
+/*  Starting of subscribe newsletter area  */
+.subscribe-newsletter-area form button {width: 30%;font-size: 13px;}
+/*  Ending of subscribe newsletter area  */
+
+/*----------Starting of Hero area----------*/
+.hero-area h1 {margin-top: 0;}
+.hero-form {margin-left: 50px;}
+/*----------Ending of Hero area----------*/
+
+/*----------Starting of About me area----------*/
+.home-about-right-area {padding: 30px 0 0 0;}
+/*----------Ending of About me area----------*/
+
+/*----------Starting of Special Services----------*/
+.special-services-left-img {margin-bottom: 30px;}
+/*----------Ending of Special Services----------*/
+
+/*----------Starting of Booked area----------*/
+.single-timing-box {padding: 10px 20px;}
+#v-cal .vcal-week span {max-width: 13.5%;}
+.home-bookAppointment-wrap {margin-top: 50px;}
+/*----------Ending of Booked area----------*/
+
+}
+
+/* Mobile Layout: 320px. */
+@media only screen and (max-width: 767px) {
+.title-overlay-wrap {padding: 110px 0 50px 0;}
+.title-overlay-wrap h1 {
+	font-size: 20px;
+	margin-bottom: 0;
+}
+/*  Starting of Header area  */
+.header-area {padding: 0;}
+.sticky--menu .site-logo {margin-top: 0px;}
+.single-slide-item {line-height: 1;}
+.single-slide-item h2 {font-size: 25px;}
+.mean-nav li a .fa-angle-down {display: none;}
+/*  Ending of Header area  */
+
+/*  Starting of Blog  */
+.blog-text p {height: 90px;}
+/*  Ending of Blog  */
+
+/* Starting of Contact area */
+.contact-info i {left: -15px;}
+.contact-info {padding-left: 20px;}
+/* Ending of Contact area */
+
+/*  Starting of Blogs Details  */
+.social-sharing a {padding: 5px 6px 5px; margin-right: 5px;}
+/*  Ending of Blogs Details  */
+
+/*  Starting of footer area  */
+.single-footer-area {padding-top: 20px}
+.footer-title {margin-bottom: 10px;}
+.section-padding.footer-area-wrapper {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+.footer-social-links li a {margin-right: 8px;}
+.copy-right-side, .footer-social-links {text-align: center;}
+.contact-info.padding-top-100 {padding-top: 30px;}
+.footer-social-links {margin-bottom: 20px;}
+/*  Ending of footer area  */
+
+/*  Starting of subscribe newsletter area  */
+.subscribe-newsletter-area form button {width: 35%; font-size: 12px;}
+.subscribe-newsletter-area form input {width: 65%;}
+.subscribe-newsletter-area {padding: 20px; top: -20px;}
+.subscribe-newsletter-wrapper {padding-top: 30px; padding-bottom: 30px;}
+.subscribe-newsletter-area h4 {margin: 0; margin-top: 0; margin-bottom: 10px; font-size: 17px;}
+/*  Ending of subscribe newsletter area  */
+
+/*  Starting of Login area area  */ 
+ .login-form {padding: 10px;}
+ .login-social-btn-area {display: block;}
+ .login-form .social-btn {width: 100%; margin-bottom: 15px;}
+/*  Ending of Login area area  */
+
+/*  Starting of Testimonial Area  */
+.testimonial-wrapper .section-title.pb_50 {padding-bottom: 100px;}
+.border_extra {padding: 20px;}
+/*  Ending of Testimonial Area  */
+
+/*----------Starting of Hero area----------*/
+.hero-area h1 {margin-top: 0;}
+.hero-form {margin-bottom: 30px; margin-left: 0;}
+/*----------Ending of Hero area----------*/
+
+/*----------Starting of Profile FillUp area----------*/
+.qualification-area-open input, .qualification-area input {margin-bottom: 15px;}
+.ui-close {top: 100%; right: 42%;}
+.qualification-area {margin-top: 55px;}
+.featured-btn {margin-top: 15px;}
+.work-place-wrap p {margin-bottom: 0px;}
+.work-place-wrap h3 {font-size: 16px;}
+.resume-icon {font-size: 30px;}
+/*----------Ending of Profile FillUp area----------*/
+
+/*----------Starting of About me area----------*/
+.home-about-right-area {padding: 30px 0 0 0;}
+/*----------Ending of About me area----------*/
+
+/*----------Starting of Special Services----------*/
+.special-services-left-img {margin-bottom: 20px;}
+/*----------Ending of Special Services----------*/
+
+/*----------Starting of Booked area----------*/
+.book-now-wrap .panel-body {padding: 15px;}
+#v-cal {margin-bottom: 30px;}
+.single-timing-box {font-size: 12px; padding: 10px 25px;}
+#v-cal .vcal-week span {max-width: 13.5%;}
+.home-bookAppointment-wrap {margin-top: 50px;}
+/*----------Ending of Booked area----------*/
+
+/*----------Starting patient profile area----------*/
+.appointment-btnsArea {margin-top: 30px;}
+.patient-round-btn {margin-bottom: 10px;}
+.patient-round-btn:last-child {margin-bottom: 0;}
+.patient__socialArea, .patient__linksArea {margin-bottom: 30px;}
+.patient-profile-wrap .nav-tabs>li {
+    float: inherit;
+    margin-bottom: 10px;
+}
+/*----------Ending patient profile area----------*/
+
+}
+
+/* Wide Mobile Layout: 480px. */
+@media only screen and (min-width: 480px) and (max-width: 767px) { 
+
+}
