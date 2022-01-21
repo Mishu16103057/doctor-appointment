@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -61,7 +60,7 @@
                 <div class="row">
                   <div class="col-lg-12">
                     <div class="login-footer text-center">
-                      Powered By <a href="http://geniusocean.com/">Kamrul Islam Mishu</a>
+                      Powered By <a href="http://geniusocean.com/">GeniousOcean</a>
                     </div>
                   </div>
                 </div>

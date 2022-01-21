@@ -60,6 +60,10 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
+        'doctor' => [
+            'driver' => 'session',
+            'provider' => 'doctors',
+        ],
         
         'user-api' => [
             'driver' => 'token',
@@ -93,6 +97,10 @@ return [
         'users' => [
             'driver' => 'eloquent',
             'model' => App\User::class,
+        ],
+        'doctors' => [
+            'driver' => 'eloquent',
+            'model' => App\Doctor::class,
         ],
 
         // 'users' => [

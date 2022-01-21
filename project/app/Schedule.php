@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Auth;
 
 class Schedule extends Model
 {
@@ -26,12 +27,12 @@ class Schedule extends Model
         return "N/A";
     }
 
-    public static function GetOpeningHours($day){
+    public static function GetOpeningHours($id,$day){
         $day_start = $day."_start";
         $day_end = $day."_end";
         $sch = "";
-        if (Schedule::where('doctorid',1)->count() > 0){
-            $schedule = Schedule::where('doctorid',1)->first();
+        if (Schedule::where('doctorid',$id)->count() > 0){
+            $schedule = Schedule::where('doctorid',$id)->first();
             return $schedule->$day_start.'-'.$schedule->$day_end;
         }
         return "N/A";

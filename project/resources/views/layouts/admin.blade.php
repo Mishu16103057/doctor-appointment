@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="keywords" content="{{$seo->meta_keys}}">
-        <meta name="author" content="GeniusOcean">
+        <meta name="author" content="Mishu">
 
         <title>{{$gs->title}}</title>
 
@@ -61,51 +61,35 @@
                                             <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false">{{ Auth::guard('admin')->user()->name}} <span>{{ Auth::guard('admin')->user()->role}}</span></a>
                                         </div>
                                     </div>
-                                    <ul class="collapse list-unstyled profile-submenu" id="homeSubmenu">    
-                                        <li><a href="{{ route('admin-profile-info') }}"><i class="fa fa-fw fa-user"></i> Edit Profile</a></li>
-                                        <li><a href=" {{ route('admin-password-reset') }} "><i class="fa fa-fw fa-cog"></i> Change Password</a></li>
-                                        <li><a href="{{ route('admin-logout') }}"><i class="fa fa-fw fa-power-off"></i> Logout</a></li>
-                                </ul>
+                                        <ul class="collapse list-unstyled profile-submenu" id="homeSubmenu">    
+                                            <li><a href="{{ route('admin-profile-info') }}"><i class="fa fa-fw fa-user"></i> Edit Profile</a></li>
+                                            <li><a href=" {{ route('admin-password-reset') }} "><i class="fa fa-fw fa-cog"></i> Change Password</a></li>
+                                            <li><a href="{{ route('admin-logout') }}"><i class="fa fa-fw fa-power-off"></i> Logout</a></li>
+                                    </ul>
                                 </li>
                             </ul>
                             <ul class="list-unstyled components">
                                 <li>
-                                    <a href="" target="_blank"><i class="fa fa-home fa-fw"></i> View Website</a>
+                                    <a href="{{ route('front.index')}}" target="_blank"><i class="fa fa-home fa-fw"></i> View Website</a>
                                 </li>
                                 <li>
                                     <a href="{{route('admin-dashboard')}}"><i class="fa fa-dashboard"></i> Dashboard</a>
                                 </li>
                                 <li>
-                                    <a href="#image" data-toggle="collapse" aria-expanded="false"><i class="fa fa-fw fa-list"></i> My Appointments</a>
-                                    <ul class="collapse list-unstyled submenu" id="image">
-                                        <li><a href="{{route('admin-appointment-today')}}"><i class="fa fa-angle-right"></i> Today's Appointments</a></li>
-                                        <li><a href="{{route('admin-appointment-pending')}}"><i class="fa fa-angle-right"></i> Pending Appointments</a></li>
-                                        <li><a href="{{route('admin-appointment-history')}}"><i class="fa fa-angle-right"></i> Appointment History</a></li>
-                                    </ul>
+                                    <a href="{{route('admin-department-index')}}"><i class="fa fa-building-o"></i> Departments</a>
                                 </li>
+                                
+                               
+                                
                                 <li>
-                                    <a href="{{route('admin-schedule')}}"><i class="fa fa-fw fa-table"></i> Update Schedule</a>
+                                    <a href="{{route('admin-user-index')}}"><i class="fa fa-fw fa-group"></i> All Patient</a>
                                 </li>
-                                <li>
-                                    <a href="{{route('admin-user-index')}}"><i class="fa fa-fw fa-group"></i> My Patient</a>
-                                </li>
-                                <li>
-                                    <a href="{{route('admin-sl-index')}}"><i class="fa fa-fw fa-sliders"></i> Sliders</a>
-                                </li>
+                               
                                 <li>
                                     <a href="{{route('admin-info')}}"><i class="fa fa-fw fa-info"></i>Home Page Information</a>
                                 </li>
-                                <li>
-                                    <a href="{{route('admin-sp-index')}}"><i class="fa fa-fw fa-medkit"></i> Specialist Section</a>
-                                </li>
-                                <li>
-                                    <a href="{{route('admin-sr-index')}}"><i class="fa fa-fw fa-ambulance"></i> Service Section</a>
-                                </li>
-                                <li>
-                                    <a href="{{route('admin-video')}}"><i class="fa fa-fw fa-video-camera"></i> Home Page Video</a>
-                                </li>
                                
-                             
+                               
                             </ul>
                         </nav>
                     </div>

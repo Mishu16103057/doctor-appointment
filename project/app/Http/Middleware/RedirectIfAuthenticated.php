@@ -28,6 +28,11 @@ class RedirectIfAuthenticated
             return redirect()->route('front.index');
           }
           break;
+          case 'doctor':
+            if (Auth::guard($guard)->check()) {
+              return redirect()->route('doctor-dashboard');
+            }
+            break;
         default:
           if (Auth::guard($guard)->check()) {
               return redirect('/home');

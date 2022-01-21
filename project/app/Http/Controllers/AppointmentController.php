@@ -9,7 +9,7 @@ class AppointmentController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth:admin');
+        $this->middleware('auth:doctor');
     }
 
     /**
@@ -23,22 +23,22 @@ class AppointmentController extends Controller
         return view('admin.category.index',compact('appoints'));
     }
 
-    public function appointments_today()
+    public function appointments_today($id)
     {
-        $appoints = Appointment::whereDate('appointment_date', '=', date('Y-m-d'))->orderBy('id','desc')->get();
-        return view('admin.appointments.today',compact('appoints'));
+        $appoints = Appointment::where('doctorid',$id)->whereDate('appointment_date', '=', date('Y-m-d'))->orderBy('id','desc')->get();
+        return view('doctor.appointments.today',compact('appoints'));
     }
 
-    public function appointments_pending()
+    public function appointments_pending($id)
     {
-        $appoints = Appointment::where('status', '=', 1)->orderBy('id','desc')->get();
-        return view('admin.appointments.pending',compact('appoints'));
+        $appoints = Appointment::where('doctorid',$id)->where('status', '=', 1)->orderBy('id','desc')->get();
+        return view('doctor.appointments.pending',compact('appoints'));
     }
 
-    public function appointments_history()
+    public function appointments_history($id)
     {
-        $appoints = Appointment::where('status', '=', 2)->orderBy('id','desc')->get();
-        return view('admin.appointments.history',compact('appoints'));
+        $appoints = Appointment::where('doctorid',$id)->where('status', '=', 2)->orderBy('id','desc')->get();
+        return view('doctor.appointments.history',compact('appoints'));
     }
 
     public function appointment_done($id){

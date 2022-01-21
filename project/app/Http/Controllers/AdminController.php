@@ -47,6 +47,23 @@ class AdminController extends Controller
     {
         return view('admin.profile');
     }
+    public function profileupdate(Request $request)
+    {
+        $input = $request->all();  
+        
+        $admin = Auth::guard('admin')->user();        
+            if ($file = $request->file('photo')) 
+            {              
+                $name = time().$file->getClientOriginalName();
+                $file->move('assets/images',$name);
+                          
+            $input['photo'] = $name;
+            } 
+
+        $admin->update($input);
+        
+        return redirect()->route('admin-profile-info')->with('success','Successfully Updated The Information.');;
+    }
 
     public function info()
     {
@@ -93,81 +110,9 @@ class AdminController extends Controller
     }
 
     //Show Schedule Form
-    public function scheduletimes()
-    {
-        $date = date('Y-m-d');
-        $day = Input::get('day');
-        $start = Input::get('start');
-        $end = Input::get('end');
-        $begain = strtotime($date." ".$start);
-        $sch = "";
-        $hours = round((strtotime($date." ".$end) - strtotime($date." ".$start)) / 3600);
+    
 
-        for ($i=1;$i<=$hours;$i++){
-            $tmstamp = $begain;
-            if ($i != 1){
-                $tmstamp = strtotime('+1 hour',$begain);
-            }
-            $apptime1 = date('H:i',$tmstamp);
-            $apptime2 = date('H:i',$tmstamp)."<br>";
-            $sch.= '<label class="checkbox-inline"><input type="checkbox" name="'.$day.'_times[]" value="'.$apptime1.'" checked>'.$apptime1.'</label>';
-            $begain = $tmstamp;
-        }
-        return $sch;
-    }
-
-    public function  schedule_save(Request $request)
-        {
-
-        $schedule = Schedule::where('doctorid',1)->first();
-        //$input = $request->all();
-        $sunday_times = "";
-        $monday_times = "";
-        $tuesday_times = "";
-        $wednesday_times = "";
-        $thursday_times = "";
-        $friday_times = "";
-        $saturday_times = "";
-
-        foreach ($request->sunday_times as $sunday){
-            $sunday_times .= $sunday.',';
-        }
-        foreach ($request->monday_times as $monday){
-            $monday_times .= $monday.',';
-        }
-
-        foreach ($request->tuesday_times as $tuesday){
-            $tuesday_times .= $tuesday.',';
-        }
-
-        foreach ($request->wednesday_times as $wednesday){
-            $wednesday_times .= $wednesday.',';
-        }
-
-        foreach ($request->thursday_times as $thursday){
-            $thursday_times .= $thursday.',';
-        }
-
-        foreach ($request->friday_times as $friday){
-            $friday_times .= $friday.',';
-        }
-
-        foreach ($request->saturday_times as $saturday){
-            $saturday_times .= $saturday.',';
-        }
-
-        $input['sunday_times'] = rtrim($sunday_times,',');
-        $input['monday_times'] = rtrim($monday_times,',');
-        $input['tuesday_times'] = rtrim($tuesday_times,',');
-        $input['wednesday_times'] = rtrim($wednesday_times,',');
-        $input['thursday_times'] = rtrim($thursday_times,',');
-        $input['friday_times'] = rtrim($friday_times,',');
-        $input['saturday_times'] = rtrim($saturday_times,',');
-        $input['accepted_insurance'] = $request->accepted_insurance;
-
-        $schedule->update($input);
-        return redirect()->back()->with('success', 'Schedule Updated Successfully.');
-          }
+    
 
     public function video()
     {
@@ -224,16 +169,16 @@ class AdminController extends Controller
             $input['fimg'] = $name;
             } 
         $admin->update($input);
-        return redirect()->route('admin-profile')->with('success','Successfully Updated The Information.');;
+        return redirect()->route('admin-')->with('success','Successfully Updated The Information.');;
     }
 
-    public function profileimg()
+    public function img()
     {
         $admin = Auth::guard('admin')->user();
         return view('admin.pimg',compact('admin'));
     }
 
-    public function profileimgup(Request $request)
+    public function imgup(Request $request)
     {
         $admin = Auth::guard('admin')->user();
         $input = $request->all();
@@ -299,7 +244,7 @@ class AdminController extends Controller
         return redirect()->route('admin-back')->with('success','Successfully Updated The Information.');;
     }
 
-    public function profileupdate(UpdateValidationRequest $request)
+    public function update(UpdateValidationRequest $request)
     {
         $input = $request->all();  
         $admin = Auth::guard('admin')->user();        
@@ -315,7 +260,7 @@ class AdminController extends Controller
             } 
 
         $admin->update($input);
-        Session::flash('success', 'Successfully updated your profile');
+        Session::flash('success', 'Successfully updated your ');
         return redirect()->back();
     }
 
@@ -344,6 +289,12 @@ class AdminController extends Controller
         $admin->update($input);
         Session::flash('success', 'Successfully updated your password');
         return redirect()->back();
+    }
+    public function details($id){
+
+        $user = User::findOrFail($id);
+        return view('user.details',compact('user'));
+
     }
     
 }

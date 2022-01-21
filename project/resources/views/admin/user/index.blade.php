@@ -1,3 +1,6 @@
+<div class="full">
+
+</div>
 @extends('layouts.admin')
 
 @section('content')
@@ -39,7 +42,7 @@
                                                       <td>{{$user->mobile}}</td>
                                                       <td>{{$user->email}}</td>
                                                   <td>
-                                                      <button class="btn btn-primary product-btn" onclick="GetData({{$user->id}})" data-toggle="modal" data-target="#myModal"><i class="fa fa-eye"></i> Details</button>
+                                                      <a class="btn btn-primary product-btn" href="{{route('admin-user-details',$user->id)}}"><i class="fa fa-eye"></i> Details</a>
                                                       <a href="{{route('admin-user-appointments',$user->id)}}" class="btn btn-success product-btn"><i class="fa fa-list"></i> Appointments</a>
                                                       <a href="{{route('admin-user-edit',$user->id)}}" class="btn btn-warning product-btn"><i class="fa fa-edit"></i> Edit</a>
                                                       <a href="{{route('admin-user-delete',$user->id)}}" class="btn btn-danger product-btn"><i class="fa fa-trash"></i> Remove</a>
@@ -71,7 +74,7 @@
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                         <h4 class="modal-title">Patient Details</h4>
                     </div>
-                    <div class="modal-body">
+                    <div class="modal-body" id="printThis">
                         <table class="table table-striped">
                             <tbody id="AppData">
 
@@ -79,6 +82,7 @@
                         </table>
                     </div>
                     <div class="modal-footer">
+                    <button id="Print" class="btn btn-default" >Print</button>
                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                     </div>
                 </div>
@@ -94,6 +98,14 @@
   function GetData(id){
       $('#AppData').load('{{url('admin/patient/details')}}/'+id);
   }
+
+  document.getElementById("Print").onclick = function () {
+    
+    $('.dashboard-wrapper').addClass('d-none');
+    window.print()
+};
+
+
 </script>
 
 @endsection
